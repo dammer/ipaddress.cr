@@ -4,11 +4,13 @@ version: 0.2.1
 authors:
   - Sijawusz Pur Rahnama <sija@sija.pl>
 
-development_dependencies:
-  ameba:
-    github: crystal-ameba/ameba
-    version: ~> 0.13.0
 
-crystal: 0.31.0
+targets:
+  ipaddress:
+    main: src/ipaddress.cr
+  ipaddress_spec:
+    main: spec/ipaddress_spec.cr
+
+crystal: 1.0.0
 
 license: MIT
