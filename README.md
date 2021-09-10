@@ -1,4 +1,4 @@
-# ipaddress.cr [![Build Status](https://travis-ci.org/Sija/ipaddress.cr.svg?branch=master)](https://travis-ci.org/Sija/ipaddress.cr)
+# ipaddress.cr ![example workflow](https://github.com/dammer/ipaddress.cr/actions/workflows/crystal.yml/badge.svg) [![Test Coverage](https://api.codeclimate.com/v1/badges/fb749afb3ded2f4e2b1f/test_coverage)](https://codeclimate.com/github/dammer/ipaddress.cr/test_coverage)
 
 IPAddress is a Crystal library designed to make the use of IPv4 and IPv6
 addresses simple, powerful and enjoyable. It provides a complete set of
@@ -1068,6 +1068,9 @@ Bryan T. Richardson, Nicolas Fevrier, jdpace, Daniele Alessandri, jrdioko,
 Ghislain Charrier, Pawel Krzesniak, Mark Sullivan, Leif Gensert,
 Erik Ahlström, Peter Vandenberk and Steve Rawlinson for their support,
 feedback and bug reports.
+
+## Test coverage
+[![Test Coverage](https://api.codeclimate.com/v1/badges/fb749afb3ded2f4e2b1f/test_coverage)](https://codeclimate.com/github/dammer/ipaddress.cr/test_coverage)
 
 ## Copyright
 
