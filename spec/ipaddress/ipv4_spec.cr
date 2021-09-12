@@ -196,6 +196,9 @@ describe IPAddress::IPv4 do
       expect_raises(ArgumentError) do
         klass.new("10.0.0.0/asd")
       end
+      expect_raises(ArgumentError) do
+        klass.new("2002::1")
+      end
     end
     it "constructs object without prefix" do
       ip = klass.new("10.10.0.0")

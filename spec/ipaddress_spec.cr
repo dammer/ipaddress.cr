@@ -1,4 +1,5 @@
 require "./spec_helper"
+require "./ipaddress/*"
 
 describe IPAddress do
   describe ".ntoa" do
