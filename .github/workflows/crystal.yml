@@ -16,12 +16,18 @@ jobs:
     - name: Install deps and tools
       run: |
         apt-get update
+        # fix git version < 2.18
         apt-get install -y software-properties-common
         add-apt-repository -y ppa:git-core/ppa
         apt-get update
+        # deps
         apt-get install -y git wget libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev tree
+    - name: Install kcov
+      run: |
         wget -q https://github.com/SimonKagstrom/kcov/releases/download/pre-v40/kcov-amd64.tar.gz
         tar -xzf kcov-amd64.tar.gz -C /
+    - name: Install CC test reporter tool
+      run:
         wget -q https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 -O cc-test-reporter
         chmod +x cc-test-reporter
         mv cc-test-reporter /usr/local/bin
@@ -32,15 +38,7 @@ jobs:
       run: crystal build --debug spec/ipaddress_spec.cr
     - name: Run tests with coverage
       run: kcov --strip-path=$(pwd)/ --include-path=./src --coveralls-id=dry-run ./coverage ./ipaddress_spec
-    - name: Export locations
-      run: export COV_LOC=$(find -name coveralls.out -type f)
-    - name: Inspect env
-      run: |
-        env
-        tree
-        pwd
-        ls -al
-    - name: Test & publish code coverage
+    - name: Publish code coverage
       uses: paambaati/codeclimate-action@v2.7.5
       env:
         CC_TEST_REPORTER_ID: a12201a359005a473a46b5392ef281e9f0ba9d2e917dd1d293d9d07ae8ecce33
