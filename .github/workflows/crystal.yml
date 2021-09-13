@@ -35,9 +35,9 @@ jobs:
       run: kcov --strip-path=$(pwd)/ --include-path=./src --coveralls-id=dry-run ./coverage ./ipaddress_spec
     - name: Publish code coverage
       uses: paambaati/codeclimate-action@v2.7.5
-      if: ${{ secrets.CC_TEST_REPORTER_ID }}
       env:
-        cc_test_reporter_id: ${{ secrets.CC_TEST_REPORTER_ID }}
+        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      if: ${{ env.CC_TEST_REPORTER_ID }}
       with:
         coverageLocations: |
           ${{github.workspace}}/cover*/**/coveralls.out:excoveralls
