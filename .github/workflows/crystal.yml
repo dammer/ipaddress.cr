@@ -41,3 +41,4 @@ jobs:
       with:
         coverageLocations: |
           ${{github.workspace}}/cover*/**/coveralls.out:excoveralls
+
